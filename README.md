@@ -53,7 +53,6 @@ Sum from 1 to 9 is 45
 * You can edit and run your own C programs.
 * You can also try Verilog programs using `iverilog`.
 
-````md
 ### Step 6. Open the noVNC Desktop
 
 1. In your Codespace window, click on the **PORTS** tab.  
