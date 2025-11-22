@@ -1,10 +1,4 @@
-Here is your **full READY-TO-PASTE complete README.md**, containing your Step-1 to Step-5 at the top, followed by Steps-6 to Step-11 as continuation.
 
-You can just copy-paste this entire text into `README.md` 👇
-
----
-
-```md
 # Getting Started with RISC-V on GitHub Codespaces
 
 Follow the steps below to set up and run programs in your own Codespace.
