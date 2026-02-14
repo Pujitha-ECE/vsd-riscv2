@@ -1,10 +1,24 @@
- #include <stdio.h>
+#include <stdint.h>
 
- extern int load(int x, int y); 
+#define GPIO_BASE   0x00000030
 
- int main() {
-     int result = 0;
-	        int count = 2;
-         result = load(0x0, count+1);
-         printf("Sum of number from 1 to %d is %d\n", count, result); 
- }
+#define GPIO_DATA   (*(volatile uint32_t *)(GPIO_BASE + 0x00))
+#define GPIO_DIR    (*(volatile uint32_t *)(GPIO_BASE + 0x04))
+#define GPIO_READ   (*(volatile uint32_t *)(GPIO_BASE + 0x08))
+
+int main()
+{
+    GPIO_DIR = 0x000000FF;      // lower 8 pins output
+
+    GPIO_DATA = 0x000000AA;     // pattern 10101010
+
+    for (volatile int i = 0; i < 100000; i++);
+
+    GPIO_DATA = 0x00000055;     // pattern 01010101
+
+    uint32_t val = GPIO_READ;   // read back
+
+    while(1);
+
+    return 0;
+}
